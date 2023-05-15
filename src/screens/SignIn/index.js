@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, TextInput } from 'react-native';
+import { Text, } from 'react-native';
 import { Container,
          InputArea,
          CustomButton,
@@ -11,6 +11,8 @@ import { Container,
 import SignInput from '../../components/SignInput';
 
 import BarberLogo from '../../assets/barber.svg';
+import EmailIcon from '../../assets/email.svg';
+import LockIcon from '../../assets/lock.svg'
 
 import { StyleSheet } from "react-native";
 
@@ -19,9 +21,10 @@ const styles = StyleSheet.create({
         fontSize: 18,
         color: "#FFFFFF",
     },
+    
+  
 });
     
-
 
 
 export default () => {
@@ -31,9 +34,15 @@ export default () => {
 
             <InputArea>
 
-                <SignInput />
+                <SignInput  
+                    IconSvg={EmailIcon} 
+                    placeholder="Digite seu e-mail"
+                />
                    
-                <SignInput />
+                <SignInput 
+                    IconSvg={LockIcon}
+                    placeholder="Digite sua senha"
+                />
                     
              
 
