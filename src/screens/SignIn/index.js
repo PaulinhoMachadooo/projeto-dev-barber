@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Text, } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { Container,
          InputArea,
          CustomButton,
@@ -28,6 +29,21 @@ const styles = StyleSheet.create({
 
 
 export default () => {
+    const navigation = useNavigation();
+
+    const [emailField, setEmailField] = useState('');
+    const [passwordField, setPasswordField] = useState('');
+
+    const handleSignClick = () => {
+
+    }
+
+    const handleMessageButtonClick = () => {
+        navigation.reset({
+            routes: [{name: 'SignUp'}]
+        });
+    }
+
     return (
         <Container>
             <BarberLogo width="100%" height="160" />
@@ -37,16 +53,21 @@ export default () => {
                 <SignInput  
                     IconSvg={EmailIcon} 
                     placeholder="Digite seu e-mail"
+                    value={emailField}
+                    onChangeText={t=>setEmailField(t)}
                 />
                    
                 <SignInput 
                     IconSvg={LockIcon}
                     placeholder="Digite sua senha"
+                    value={passwordField}
+                    onChangeText={t=>setPasswordField(t)}
+                    password={true}
                 />
                     
              
 
-                <CustomButton>
+                <CustomButton onPress={handleSignClick}>
                    <Text style={styles.textButton}>Login</Text> 
                 </CustomButton>
 
@@ -55,7 +76,7 @@ export default () => {
                 
            
 
-            <SignMessageButton>
+            <SignMessageButton onPress={handleMessageButtonClick}>
                 <SignMessageButtonText>Ainda não possui uma conta?</SignMessageButtonText>
                 <SignMessageButtonTextBold>Cadastre-se</SignMessageButtonTextBold>
             </SignMessageButton>
