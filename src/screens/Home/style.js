@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components/native";
+import { StyleSheet } from "react-native";
 
 export const Container = styled.SafeAreaView`
     flex: 1;
@@ -15,6 +16,7 @@ export const HeaderArea = styled.View`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    heigth:100px;
 `;
 
 export const HeaderTitle = styled.Text`
@@ -40,12 +42,18 @@ export const LocationArea = styled.View`
     margin-top: 30px;
 `;
 
-export const LocationInput = styled.TextIput`
-    flex: 1;
-    font-size: 16px;
-    color: #FFFFFF;
-`;
 export const LocationFinder = styled.TouchableOpacity`
     width: 24px;
     height: 24px;
 `;
+
+export const styles = StyleSheet.create({
+
+  locationInput: {
+    flex: 1,
+    fontSize: 16,
+    color: '#FFFFFF',
+  },
+
+});
+

@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { styles} from "./style"
+import { StyleSheet, ScrollView, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { Container,
+import {
+        Container,
         Scroller,
         
         HeaderArea,
@@ -16,6 +19,7 @@ import { Container,
 
 import SearchIcon from '../../assets/search.svg';
 import MyLocationIcon from '../../assets/my_location.svg';
+import { TextInput } from "react-native-gesture-handler";
 
 export default () => {
 
@@ -27,23 +31,23 @@ export default () => {
         <Container>
             <Scroller>
 
-                <HeaderArea>
+            <HeaderArea>
                     <HeaderTitle numberOfLines={2}>Encontre seu barbeiro favorito</HeaderTitle>
-                    <SearchButtom onPress={()=>navigation.navigate('Search')}>
-                        <SearchIcon width="26" height="26" fill="FFFFFF" />
+                    < SearchButtom onPress={()=>navigation.navigate('Search')}>
+                        <SearchIcon width="26" height="26" fill="#FFFFFF" />
                     </SearchButtom>
-                </HeaderArea>
+            </HeaderArea >
 
                 <LocationArea>
-                    <LocationInput 
+                    <TextInput style={styles.locationInput} 
                         placeholder="Onde você está?"
                         placeholderTextColor="#FFFFFF"
                         value={locationText}
                         onChangeText={t=>setLocationText(t)}
                     />
-                    <LocationFinder>
+                    <View style={styles.locationFinder}>
                         <MyLocationIcon width="24" height="24" fill="#FFFFFF" />
-                    </LocationFinder>
+                    </View>
                 </LocationArea>
 
             </Scroller>
