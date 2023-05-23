@@ -99,19 +99,14 @@ export default () => {
                     value={passwordField}
                     onChangeText={t=>setPasswordField(t)}
                     password={true}
-                />
-                    
-             
+                />         
 
                 <CustomButton onPress={handleSignClick}>
                    <Text style={styles.textButton}>Cadastar</Text> 
                 </CustomButton>
 
-
             </InputArea>
                 
-           
-
             <SignMessageButton onPress={handleMessageButtonClick}>
                 <SignMessageButtonText>Já possui uma conta?</SignMessageButtonText>
                 <SignMessageButtonTextBold>Faça Login</SignMessageButtonTextBold>

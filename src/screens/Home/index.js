@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { styles} from "./style"
-import { StyleSheet, ScrollView, View } from "react-native";
+import { View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import {
         Container,

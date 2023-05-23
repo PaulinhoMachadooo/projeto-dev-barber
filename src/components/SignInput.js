@@ -1,6 +1,6 @@
 import React from "react";
 import styled from 'styled-components/native';
-import { View, TextInput ,Text, StyleSheet } from "react-native/";
+import { StyleSheet } from "react-native/";
 
 const InputArea = styled.View`
     width: 100%;
